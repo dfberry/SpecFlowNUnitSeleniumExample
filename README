@@ -1,7 +1,9 @@
 Required Additional libraries/tools:
-.Specflow
-.NUnit
-.Selenium
+.FireFox - used both to capture Selenium tests and used by Selenium to run tests
+.Specflow - full install
+.NUnit - full install
+.Selenium - webdriver and ide, nuget didn't have support dll
+.Java - Selenium uses java server
 
 This Windows Visual Studio 2010 solution contains 3 class library projects. 
 .Calculator library
@@ -9,6 +11,14 @@ This Windows Visual Studio 2010 solution contains 3 class library projects.
 .MVCCalculator mvc .net csharp website
 
 I couldn't get this to run from inside Visual Studio but it does run the test from NUnit. 
+
+Assuming you could build the solution, here is how to run the tests:
+1. make sure selenium server it up and running, from command prompt: "java -jar selenium-server-standalone-2.20.0.jar"
+2. open NUnit IDE (do not try to run inside Visual Studio)
+3. in NUnit, "File -> Open Project" and select the Calculator.spec.dll file. The NUnit ide should show the tests it found in the left column.
+4. in NUnit, "Run" in the top right column. 
+5. FireFox opens and test runs, FireFox closes.
+6. in NUnit, review test results.
 
 
 [Note to Self: 
