@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Calculator";
+}
+
+<h2>@ViewBag.Message</h2>
+<p>
+    Calculator
+    @using (Html.BeginForm("Result","Calculator"))
+    {
+        @Html.TextBox("first","50", new { maxlength="6", size="5"}) 
+        @Html.Label("+") 
+        @Html.TextBox("second", "70", new { maxlength = "6", size = "5" }) 
+        @Html.Label("=")
+        <input id='add' type='submit' value='Add'/>
+    }
+</p>

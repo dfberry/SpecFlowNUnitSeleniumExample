@@ -1,0 +1,24 @@
+Required Additional libraries/tools:
+.Specflow
+.NUnit
+.Selenium
+
+This Windows Visual Studio 2010 solution contains 3 class library projects. 
+.Calculator library
+.Calculator.spec specifications
+.MVCCalculator mvc .net csharp website
+
+I couldn't get this to run from inside Visual Studio but it does run the test from NUnit. 
+
+
+[Note to Self: 
+
+. Hit this interop compiler issue: http://stackoverflow.com/questions/8156488/what-does-reference-was-created-to-embedded-interop-assembly-mean
+
+. Port number hardcoded into Calculator.spec/StepDefinition1.cs as 53113
+
+.selenium article: http://alensiljak.blogspot.com/2011/07/specflow-and-selenium-quick-start.html
+
+]
+
+dina@berryintl.com
