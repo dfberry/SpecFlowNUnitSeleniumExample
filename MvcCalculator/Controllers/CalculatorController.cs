@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Calculator;
 
 namespace MvcCalculator.Controllers
 {
@@ -10,17 +11,22 @@ namespace MvcCalculator.Controllers
     {
         //
         // GET: /Calculator/
+        Calculator.Calculator mycalculator = new Calculator.Calculator();
 
         public ActionResult Index()
         {
             // DFB: view should contain two textboxes for each number then an "add" button
             return View();
         }
-        
-        public ActionResult Result()
+
+        public ActionResult Result(FormCollection formCollection)
         {
             // DFB: view should contain two textboxes for each number then an "add" button
-            ViewData["result"] = "130";
+            mycalculator.Add(int.Parse(formCollection["first"].Trim()));
+            mycalculator.Add(int.Parse(formCollection["second"].Trim()));
+            mycalculator.Sum();
+            
+            ViewData["result"] = mycalculator.Total();
             return View();
         }
     }

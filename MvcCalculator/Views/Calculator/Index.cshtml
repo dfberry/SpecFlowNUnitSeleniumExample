@@ -7,9 +7,9 @@
     Calculator
     @using (Html.BeginForm("Result","Calculator"))
     {
-        @Html.TextBox("first","50", new { maxlength="6", size="5"}) 
+        @Html.TextBox("first") 
         @Html.Label("+") 
-        @Html.TextBox("second", "70", new { maxlength = "6", size = "5" }) 
+        @Html.TextBox("second") 
         @Html.Label("=")
         <input id='add' type='submit' value='Add'/>
     }

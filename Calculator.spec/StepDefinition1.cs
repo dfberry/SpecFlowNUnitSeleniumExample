@@ -42,33 +42,26 @@ namespace Calculator.spec
             }
             Assert.AreEqual("", verificationErrors.ToString());
         }
-
         [Given(@"I am on (.*) page")]
         public void GivenIAmOnCalculatorPage(string pagename)
         {
             Assert.AreEqual(pagename.ToLower(), driver.Title.ToLower());
         }
-
         [Given(@"I have entered (.*) into '(.*)' of the calculator")]
         public void GivenIHaveEnteredSomethingIntoTheCalculator(int result, string guiId)
         {
             driver.FindElement(By.Id(guiId)).SendKeys(result.ToString());
         }
-
-
-
-        [When("I press '(.*)'")]
+        [When("I press (.*)")]
         public void WhenIPressAdd(string buttonName)
         {
             driver.FindElement(By.Id(buttonName)).Click();
         }
-
         [Then("the result should be (.*) on the screen")]
         public void ThenTheResultShouldBe(int result)
         {
-            Assert.IsTrue(driver.FindElement(By.Id("calc-result-label")).Text.Contains("120"));
+            Assert.AreEqual("120",driver.FindElement(By.Id("calc-result-label")).Text);
         }
-
         private bool IsElementPresent(By by)
         {
             try

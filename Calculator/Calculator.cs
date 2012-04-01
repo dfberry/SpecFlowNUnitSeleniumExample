@@ -13,11 +13,11 @@ namespace Calculator
 
         public void Add(int number)
         {
-            Trace.WriteLine("Add");
             numbers.Add(number);
         }
         public void Sum()
         {
+            // DFB: introduced Error Here on purpose
             sum = numbers.Sum()+10 ;
         }
         public int Total()
